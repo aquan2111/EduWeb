@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>Kiểm soát học sinh 12 Oxbridge</title>
+	<style>
+		body {backgroud-color: rgb(255,255,255);}
+		h1 {
+			color: black;
+			font-family: corbel;
+			font-size: 300%;
+			text-align:center;
+		}
+		h2 {
+			color: black;
+			font-family: corbel;
+			font-size: 200%;
+		}
+		h3 {
+			color: red;
+			font-family: corbel;
+			font-size: 150%;
+		}
+		p {
+			color: blue;
+			font-family: corbel;
+			font-size: 150%;
+		}
+		ul {
+			 list-style-type: none;
+			 margin: 0;
+			 padding: 0;
+			 overflow: hidden;
+			 background-color: blue;
+			 position: fixed;
+			 top: 0;
+			 width: 100%;
+			 font-family: corbel;
+		}
+		li {
+			float: left;
+		}
+		li a, .dropbtn {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 10px 10px;
+		}
+		li a:hover, .dropdown:hover .dropbtn {
+		  background-color: rgb(0, 150, 255);
+		}
+		li.dropdown {
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: rgb(0, 150, 255);
+			  min-width: 160px;
+			  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+		}
+
+		.dropdown-content a {
+			color: white;
+			padding: 10px 10px;
+			text-decoration: none;
+			display: block;
+			text-align: center;
+		}
+
+		.dropdown:hover .dropdown-content {
+  			display: block;
+		}
+
+		form {
+			font-family:corbel;
+		}
+
+		table {
+			font-family:corbel;
+			width=100%;
+			border-collapse: collapse;
+		}
+		table, th, td {
+			border: 1px solid black;
+		}
+		button {
+			font-family:corbel;
+			text-align:center;
+		}
+	</style>
+
+	<base>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="12 Oxbridge, song bằng, Ams">
+	<meta name="description" content="Kiểm soát học sinh 12 Oxbridge">
+	<meta name="author" content="Quan Nguyen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.css/">
+	<script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $.getJSON(
+        "https://education-management-website.firebaseio.com/students.json",
+        function (data) {
+          var objs = Object.keys(data).map(function (key) {
+            return { id: key, value: data[key] };
+          });
+          objs.forEach(function (item) {
+            console.log(item)
+            /*
+            var eventShortdesDOM = $("<div/>");
+            eventShortdesDOM
+              .css("color", "#007bff")
+              .addClass(" center__short-description ")
+              .html(
+                item.value.short__description
+                  ? item.value.short__description
+                  : "Dang cap nhat"
+              );
+            var eventImgDOM = $("<img/>");
+            eventImgDOM
+              .attr("src", item.value.image)
+              .css("margin", "0 5px")
+              .html(item.value.image);
+            var eventNameDOM = $("<p/>");
+            eventNameDOM
+              .css("color", "#007bff")
+              .addClass("center__name")
+              .html(item.value.name ? item.value.name : " Dang cap nhat ");
+            var eventaDOM = $("<a/>");
+            eventaDOM
+              .css("cursor", "pointer")
+              .append(eventImgDOM)
+              .append(eventNameDOM)
+              .append(eventShortdesDOM);
+
+            var eventDOM = $("<li/>");
+            eventDOM.append(eventaDOM).appendTo($(".center__left-list"));
+            */
+          });
+        }
+      );
+    </script>
+</head>
+
+<body>
+<ul>
+	<li><a href="file:///D:/Edu%20Web%20Code/HomePage.html">Trang chủ</a></li>
+	<li><a href="">Danh sách học sinh</a></li>
+	<li><a href="file:///D:/Edu%20Web%20Code/TeachersList.html">Danh sách giáo viên</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Học tập</a>
+		<div class="dropdown-content">
+			<a href="">Điểm số</a>
+			<a href="file:///D:/Edu%20Web%20Code/Homework.html">Bài tập - Kiểm tra</a>
+			<a href="">Thời khóa biểu</a>
+		</div>
+	</li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Hạnh kiểm</a>
+		<div class="dropdown-content">
+			<a href="file:///D:/Edu%20Web%20Code/K%E1%BB%89%20lu%E1%BA%ADt/DisciplinaryHistory.html">Lịch sử kỉ luật</a>
+			<a href="">Tổng hợp</a>
+		</div>
+	</li>
+	<li style="float:right"><a href="file:///D:/Edu%20Web%20Code/LogIn.html">Đăng nhập</a></li>
+</ul>
+
+<h1>Bảng thông báo</h1>
+<p>
+	- Ngày 26/10/2020: Kiểm tra giữa kì môn Vật Lí <br> - Ngày 27/10/2020: Kiểm tra giữa kì môn Hóa Học
+</p>
+
+
+</body>
+</html>
